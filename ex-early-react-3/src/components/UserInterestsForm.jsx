@@ -62,7 +62,7 @@ export default class UserInterestsForm extends React.Component {
                           type="checkbox"
                           id={interest.id}
                           checked={
-                            this.state.interests["SPORTS_INTERESTS"].indexOf(
+                            this.state.interests.SPORTS_INTERESTS.indexOf(
                               interest.id
                             ) >= 0
                           }

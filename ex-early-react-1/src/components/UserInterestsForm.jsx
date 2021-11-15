@@ -85,6 +85,19 @@ export default class UserInterestsForm extends React.Component {
                     Soccer
                   </Label>
                 </FormGroup>
+                <FormGroup className="row justify-content-center">
+                  <Col xs={2} className="text-right">
+                    <Input
+                      type="checkbox"
+                      id="rugby"
+                      checked={this.state.interests.indexOf("rugby") >= 0}
+                      onChange={() => this.handleChange("rugby")}
+                    />
+                  </Col>
+                  <Label className="text-left col-4" check for="rugby">
+                    Rugby
+                  </Label>
+                </FormGroup>
               </Col>
             </Row>
           </Form>

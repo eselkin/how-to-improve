@@ -15,7 +15,9 @@ export default class UserInterestsForm extends React.Component {
     let newInterests = { ...this.state.interests }; // make a copy of the object using the spread operator
     if (newInterests[typeOfInterest].indexOf(interest) >= 0) {
       // check if the interest exists and if it does, remove it with filter
-      newInterests = newInterests[typeOfInterest].filter((i) => i !== interest);
+      newInterests[typeOfInterest] = newInterests[typeOfInterest].filter(
+        (i) => i !== interest
+      );
     } else {
       // if the interest does not exist add it with push
       newInterests[typeOfInterest].push(interest);
@@ -36,10 +38,10 @@ export default class UserInterestsForm extends React.Component {
             {Object.keys(INTERESTS).map((interestType) => (
               <CheckboxSection
                 key={interestType}
-                state={this.state}
+                state={this.state.interests[interestType]}
                 interests={INTERESTS[interestType]}
                 interestType={interestType}
-                handleChange={this.handleChange}
+                handleChange={this.handleChange.bind(this)}
               />
             ))}
           </Form>

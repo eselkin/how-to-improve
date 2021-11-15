@@ -20,7 +20,7 @@ export default function CheckboxSection({
             )
             .join(" ")}
         </strong>
-      </h6>{" "}
+      </h6>
       <Row>
         <Col
           xs={6}
@@ -36,9 +36,7 @@ export default function CheckboxSection({
                   <Input
                     type="checkbox"
                     id={interest.id}
-                    checked={
-                      state.interests[interestType].indexOf(interest.id) >= 0
-                    }
+                    checked={state.indexOf(interest.id) >= 0}
                     onChange={() => handleChange(interest.id, interestType)}
                   />
                 </Col>

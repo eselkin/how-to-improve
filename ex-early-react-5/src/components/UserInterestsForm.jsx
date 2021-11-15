@@ -8,7 +8,7 @@ export default function UserInterestsForm() {
     interests: { SPORTS_INTERESTS: [], HOBBIES: [] },
   });
 
-  const handleChange = (interest, typeOfInterest) => {
+  const handleChange = useCallback((interest, typeOfInterest) => {
     // We need the type of interest to say which key to use in this.state.interests
     let newInterests = { ...state.interests }; // make a copy of the object using the spread operator
     if (newInterests[typeOfInterest].indexOf(interest) >= 0) {
@@ -21,7 +21,7 @@ export default function UserInterestsForm() {
       newInterests[typeOfInterest].push(interest);
     }
     setState({ interests: newInterests });
-  };
+  }, [state]);
   const handleSubmit = () => {
     console.log(this.state);
   };
